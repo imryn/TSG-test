@@ -1,9 +1,9 @@
 # Automation for countries endpoints
 in this project I developed several endpoints related to countries API.
-GET all_countries api  - return all exist countries
-GET country by name api - return data on specific country
-GET country by code api - return data by country code on specific country
-GET countries by region - return all countries related to specific region
+- GET all_countries api  - return all exist countries
+- GET country by name api - return data on specific country
+- GET country by code api - return data by country code on specific country
+- GET countries by region - return all countries related to specific region
 
 
 ## installation guide
