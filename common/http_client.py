@@ -4,6 +4,7 @@ from common.headers import Headers
 
 class HttpClient(Headers):
 
+    ''' dealing the API request and return it's data/payload '''
     @staticmethod
     def __get_api_details(response):
         try:
@@ -41,14 +42,17 @@ class HttpClient(Headers):
             else:
                 print(error_text)
 
+    ''' dealing all headers type '''
     def __get_headers(self, json_request, data_request, params, headers, Authorization):
         return self.get_headers_by_request_type(json_request, data_request, params, headers, Authorization)
 
+    ''' dealing GET API request '''
     def get(self, url, params=None, headers=None, json_request=None, data_request=None, Authorization=None):
         request_headers = self.__get_headers(json_request, data_request, params, headers, Authorization)
         response = requests.request(method='GET', url=url, params=params, headers=request_headers, json=json_request)
         return self.__get_api_details(response)
 
+    ''' dealing POST API request '''
     def post(self, url, json_request=None, data_request=None, headers=None, Authorization=None):
         request_headers = self.__get_headers(json_request, data_request, headers, Authorization)
         response = requests.request(method='POST', url=url, json=json_request, data=data_request,

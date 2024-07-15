@@ -1,5 +1,6 @@
 from common.http_client import HttpClient
 
+''' class for the micro service of countries '''
 class CountryService(HttpClient):
 
     def __init__(self, countries_url):

@@ -8,10 +8,12 @@ class EnvironmentSettings:
         file_path = Path(f"{os.getcwd()}/.env")
         load_dotenv(override=True, dotenv_path=file_path)
 
+    ''' reaturn each key exist in the .env file '''
     @staticmethod
     def get_env_variable(key_name):
         return os.getenv(key_name,"")
 
+    ''' reaturn dictionary of the .env file '''
     def get_env_variable_dict(self):
         env_dict = {}
         for name in self.__store_env_keys_in_array():
@@ -19,6 +21,7 @@ class EnvironmentSettings:
             env_dict[name] = env_value
         return env_dict
 
+    ''' for making sure the example env have every variable that exist in the env file '''
     @staticmethod
     def __store_env_keys_in_array():
         lines = []
