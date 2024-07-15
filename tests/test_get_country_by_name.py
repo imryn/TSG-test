@@ -21,3 +21,5 @@ def test_get_country_with_invalid_country_name(get_countries_service, country_na
     assert country['statusCode'] == 404, f"country return or get another status code. or wrong status. {country}"
     country_response = country['response']
     assert country_response['message'] == 'Not Found', f"wrong error message. or no message at all. look at {country}"
+
+    fdfd
